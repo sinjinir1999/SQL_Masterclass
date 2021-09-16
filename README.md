@@ -99,13 +99,9 @@ There are 3 columns and 14 rows in this dataset:
 
 > How many mentors are there from Australia or the United States?
 
-|    region     |
-| ------------- |
-| United States |
-| India         |
-| Australia     |
-| Asia          |
-| Africa        |
+| mentor_count |
+| ------------ |
+|            5 |
 <br>
 
 ### Question 7
