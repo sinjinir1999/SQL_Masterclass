@@ -1,4 +1,4 @@
-# SQL Masterclass For Data Scientists
+# SQL Masterclass || Danny Ma
 ![](https://raw.githubusercontent.com/DataWithDanny/sql-masterclass/main/images/sql-masterclas-banner.png)
 
 ## Table Records
@@ -29,17 +29,6 @@ There are 3 columns and 14 rows in this dataset:
 
 > Show only the top 5 rows from the `trading.members` table
 
-<details>
-  <summary>Click here to reveal the solution!</summary>
-
-```sql
-SELECT * FROM trading.members
-LIMIT 5;
-```
-
-</details>
-<br>
-
 | member_id | first_name |    region     |
 | --------- | ---------- | ------------- |
 | c4ca42    | Danny      | Australia     |
@@ -53,18 +42,6 @@ LIMIT 5;
 
 > Sort all the rows in the table by `first_name` in alphabetical order and show the top 3 rows
 
-<details>
-  <summary>Click here to reveal the solution!</summary>
-
-```sql
-SELECT * FROM trading.members
-ORDER BY first_name
-LIMIT 3;
-```
-
-</details>
-<br>
-
 | member_id | first_name |    region     |
 | --------- | ---------- | ------------- |
 | c9f0f8    | Abe        | United States |
@@ -75,17 +52,6 @@ LIMIT 3;
 ### Question 3
 
 > Which records from `trading.members` are from the United States region?
-
-<details>
-  <summary>Click here to reveal the solution!</summary>
-
-```sql
-SELECT * FROM trading.members
-WHERE region = 'United States';
-```
-
-</details>
-<br>
 
 | member_id | first_name |    region     |
 | --------- | ---------- | ------------- |
@@ -101,20 +67,6 @@ WHERE region = 'United States';
 ### Question 4
 
 > Select only the `member_id` and `first_name` columns for members who are not from Australia
-
-<details>
-  <summary>Click here to reveal the solution!</summary>
-
-```sql
-SELECT
-  member_id,
-  first_name
-FROM trading.members
-WHERE region != 'Australia';
-```
-
-</details>
-<br>
 
 | member_id | first_name |
 | --------- | ---------- |
@@ -134,18 +86,6 @@ WHERE region != 'Australia';
 
 > Return the unique `region` values from the `trading.members` table and sort the output by reverse alphabetical order
 
-<details>
-  <summary>Click here to reveal the solution!</summary>
-
-```sql
-SELECT DISTINCT region
-FROM trading.members
-ORDER BY region DESC;
-```
-
-</details>
-<br>
-
 |    region     | 
 | ------------- |
 | United States |
@@ -158,19 +98,6 @@ ORDER BY region DESC;
 ### Question 6
 
 > How many mentors are there from Australia or the United States?
-
-<details>
-  <summary>Click here to reveal the solution!</summary>
-
-```sql
-SELECT
-  COUNT(*) AS mentor_count
-FROM trading.members
-WHERE region IN ('Australia', 'United States');
-```
-
-</details>
-<br>
 
 |    region     |
 | ------------- |
@@ -185,19 +112,6 @@ WHERE region IN ('Australia', 'United States');
 
 > How many mentors are not from Australia or the United States?
 
-<details>
-  <summary>Click here to reveal the solution!</summary>
-
-```sql
-SELECT
-  COUNT(*) AS mentor_count
-FROM trading.members
-WHERE region NOT IN ('Australia', 'United States');
-```
-
-</details>
-<br>
-
 | mentor_count |
 | ------------ |
 |            3 |
@@ -206,21 +120,6 @@ WHERE region NOT IN ('Australia', 'United States');
 ### Question 8
 
 > How many mentors are there per region? Sort the output by regions with the most mentors to the least
-
-<details>
-  <summary>Click here to reveal the solution!</summary>
-
-```sql
-SELECT
-  region,
-  COUNT(*) AS mentor_count
-FROM trading.members
-GROUP BY region
-ORDER BY mentor_count DESC;
-```
-
-</details>
-<br>
 
 |    region     | mentor_count |
 | ------------- | ------------ |
@@ -235,24 +134,6 @@ ORDER BY mentor_count DESC;
 
 > How many US mentors and non US mentors are there?
 
-<details>
-  <summary>Click here to reveal the solution!</summary>
-
-```sql
-SELECT
-  CASE
-    WHEN region != 'United States' THEN 'Non US'
-    ELSE region
-  END AS mentor_region,
-  COUNT(*) AS mentor_count
-FROM trading.members
-GROUP BY mentor_region
-ORDER BY mentor_count DESC;
-```
-
-</details>
-<br>
-
 | mentor_region | mentor_count |
 | ------------- | ------------ |
 | United States |            7 |
@@ -263,15 +144,7 @@ ORDER BY mentor_count DESC;
 
 > How many mentors have a first name starting with a letter before `'E'`?
 
-<details>
-  <summary>Click here to reveal the solution!</summary>
-
-```sql
-SELECT
-  COUNT(*) AS mentor_count
-FROM trading.members
-WHERE LEFT(first_name, 1) < 'E';
-```
-
-</details>
+| mentor_count |
+| -------------|
+|            6 |
 <br>
