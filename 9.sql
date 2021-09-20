@@ -1,3 +1,12 @@
+
+> How many US mentors and non US mentors are there?
+
+| mentor_region | mentor_count |
+| ------------- | ------------ |
+| United States |            7 |
+| Non US        |            7 |
+
+
 SELECT CASE 
 		WHEN region <> 'United States'
 			THEN 'Non US'
