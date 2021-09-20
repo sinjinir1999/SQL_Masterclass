@@ -1,6 +1,10 @@
 
 > How many mentors are there from Australia or the United States?
 
+| mentor_count |
+| ------------ |
+|            5 |
+
 
 SELECT COUNT(DISTINCT CASE 
 			WHEN region IN (
