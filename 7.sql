@@ -1,3 +1,11 @@
+
+> How many mentors are not from Australia or the United States?
+
+| mentor_count |
+| ------------ |
+|            3 |
+
+
 SELECT COUNT(DISTINCT CASE 
 			WHEN region NOT IN (
 					'Australia'
