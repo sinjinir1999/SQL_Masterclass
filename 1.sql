@@ -1,4 +1,4 @@
-> Sort all the rows in the table by `first_name` in alphabetical order and show the top 3 rows
+> Show only the top 5 rows from the `trading.members` table
 
 SELECT *
 FROM trading.members LIMIT 5
