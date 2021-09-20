@@ -1,3 +1,7 @@
+
+> How many mentors are there from Australia or the United States?
+
+
 SELECT COUNT(DISTINCT CASE 
 			WHEN region IN (
 					'Australia'
